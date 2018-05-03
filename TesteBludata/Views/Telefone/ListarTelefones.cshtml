@@ -1,0 +1,34 @@
+﻿@model IEnumerable<TesteBludata.Telefone>
+
+<div class="form-horizontal">
+    <hr />
+    <div class="form-group">
+        <input type="text" id="Telefone" name="Telefone"/>
+        <a href="#" onclick="AddTelefone();" class="btn btn-default">Adicionar</a>
+    </div>
+</div>
+
+<input type="hidden" id="idPessoa" name="idPessoa" value="@ViewBag.Pessoa" />
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.num_tel)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.num_tel)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Edit", new { id = item.id }) |
+                @Html.ActionLink("Excluir", "Delete", new { id = item.id })
+            </td>
+        </tr>
+    }
+
+</table>

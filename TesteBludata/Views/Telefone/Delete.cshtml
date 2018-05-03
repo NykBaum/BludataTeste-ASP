@@ -1,0 +1,30 @@
+﻿@model TesteBludata.Telefone
+
+@{
+    ViewBag.Title = "Excluir";
+}
+
+<h2>Excluir</h2>
+
+<h3>Você realmente deseja excluir o telefone @Model.num_tel ?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.num_tel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.num_tel)
+        </dd>
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Excluir" class="btn btn-default" /> |
+            @Html.ActionLink("Pessoas", "Index")
+        </div>
+    }
+</div>

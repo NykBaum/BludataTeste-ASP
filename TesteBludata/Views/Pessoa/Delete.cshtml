@@ -1,0 +1,63 @@
+﻿@model TesteBludata.Pessoa
+
+@{
+    ViewBag.Title = "Excluir";
+}
+
+<h2>Excluir</h2>
+
+<h3>Você realmente deseja excluir @Model.nome ?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cpf)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cpf)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.data_cad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.data_cad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.data_nasc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.data_nasc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.rg)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.rg)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Excluir" class="btn btn-default" /> |
+            @Html.ActionLink("Pessoas", "Index")
+        </div>
+    }
+</div>
